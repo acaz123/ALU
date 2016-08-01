@@ -8,7 +8,7 @@ const int byteSize = sizeof(int) * CHAR_BIT;
 
 
 
-/**CONVERTS DECIMAL TO BINARY
+/** CONVERTS DECIMAL TO BINARY
  *
  * converts an integer to a char array
  * as a binary representation of the
@@ -17,7 +17,7 @@ const int byteSize = sizeof(int) * CHAR_BIT;
  *
  */
 
-char *decimalToBinary(char *cArray, int a)
+void decimalToBinary(char *cArray, int a)
 {
     int i;
     for(i = 0; i < byteSize; i++)
@@ -62,7 +62,7 @@ int binaryToDecimal(char *cArray)
  *
  */
 
-bool properInput(char *digit)
+void properInput(char *digit)
 {
     int i;
     for(i = 0; i < byteSize; i++)

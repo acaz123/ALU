@@ -16,7 +16,7 @@
  *
  */
 
-char *logicLS(char *a, int shifts)
+void logicLS(char *a, int shifts)
 {
     int i;
     for(i = byteSize - 1; i >= shifts; i--)
@@ -24,8 +24,6 @@ char *logicLS(char *a, int shifts)
 
     for(; i >= 0; i--)
         a[i] = '0';
-
-    return a;
 }
 
 
@@ -42,7 +40,7 @@ char *logicLS(char *a, int shifts)
  *
  */
 
-char *logicRS(char *a, int shifts)
+void logicRS(char *a, int shifts)
 {
     int i;
     for(i = 0; i < byteSize - shifts ; i++)
@@ -50,23 +48,19 @@ char *logicRS(char *a, int shifts)
 
     for(; i < byteSize; i++)
         a[i] = '0';
-
-    return a;
 }
 
 
 /** ARITHMETIC LEFT SHIFT OF A BINARY NUMBER
  *
- * Calls function "logicLS()" and returns the
- * value returned by "logicLS()" since they
+ * Calls function "logicLS()" since they
  * are equivalent functions.
  *
  */
 
-char *arithmeticLS(char *a, int shifts)
+void arithmeticLS(char *a, int shifts)
 {
-    a = logicLS(a, shifts);
-    return a;
+    logicLS(a, shifts);
 }
 
 
@@ -85,7 +79,7 @@ char *arithmeticLS(char *a, int shifts)
  *
  */
 
-char *arithmeticRS(char *a, int shifts)
+void arithmeticRS(char *a, int shifts)
 {
     int i;
     for(i = 0; i < byteSize - shifts ; i++)
@@ -93,8 +87,6 @@ char *arithmeticRS(char *a, int shifts)
 
     for(; i < byteSize; i++)
         a[i] = a[byteSize - 1];
-
-    return a;
 }
 
 
@@ -105,12 +97,11 @@ char *arithmeticRS(char *a, int shifts)
  * binary represented number is then logical left
  * shifted "rotations" amount of times using "logicLS()".
  * The bit(s) stored in the temp array are then added
- * as the right most bit(s) of the char array. The
- * rotated array is then returned.
+ * as the right most bit(s) of the char array.
  *
  */
 
-char *rotateL(char * a, int rotations)
+void rotateL(char * a, int rotations)
 {
     int i, j;
     char temp[rotations];
@@ -119,12 +110,10 @@ char *rotateL(char * a, int rotations)
     i >= byteSize - rotations; i--, j--)
         temp[j] = a[i];
 
-    a = logicLS(a, rotations);
+    logicLS(a, rotations);
 
     for(i = 0;i < rotations; i++)
         a[i] = temp[i];
-
-    return a;
 }
 
 
@@ -135,12 +124,11 @@ char *rotateL(char * a, int rotations)
  * binary represented number is then logical right
  * shifted "rotations" amount of times using "logicRS()".
  * The bit(s) stored in the temp array are then added
- * as the left most bit(s) of the char array. The
- * rotated array is then returned.
+ * as the left most bit(s) of the char array.
  *
  */
 
-char *rotateR(char * a, int rotations)
+void rotateR(char * a, int rotations)
 {
     int i, j;
     char temp[rotations];
@@ -148,13 +136,11 @@ char *rotateR(char * a, int rotations)
     for(i = 0; i < rotations; i++)
         temp[i] = a[i];
 
-    a = logicRS(a, rotations);
+    logicRS(a, rotations);
 
     for(i = byteSize - 1, j = rotations - 1;
     i >= byteSize - rotations; i--, j--)
         a[i] = temp[j];
-
-    return a;
 }
 
 
@@ -163,9 +149,9 @@ char *rotateR(char * a, int rotations)
  *
  */
 
-char *rotateLcarry(char * a, int rotations)
+void rotateLcarry(char * a, int rotations)
 {
-    return a;
+
 }
 
 
@@ -174,9 +160,9 @@ char *rotateLcarry(char * a, int rotations)
  *
  */
 
-char *rotateRcarry(char * a, int rotations)
+void rotateRcarry(char * a, int rotations)
 {
-    return a;
+
 }
 
 
