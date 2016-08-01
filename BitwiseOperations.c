@@ -5,14 +5,14 @@
 #include "BitwiseOperations.h"
 
 
-/**
+/** BITWISE AND OF TWO BINARY NUMBERS
+ *
  * performs the bitwise AND of two
  * binary numbers represented as char
- * arrays of 1's and 0's. The result
- * is returned.
+ * arrays of 1's and 0's.
  */
 
-char *BitwiseAND(char *a, char *b, char *result)
+void BitwiseAND(char *a, char *b, char *result)
 {
     properInput(a);properInput(b);
 
@@ -21,19 +21,18 @@ char *BitwiseAND(char *a, char *b, char *result)
     {
         result[i] = (a[i] == b[i]) ? a[i] : '0';
     }
-    return result;
 }
 
 
 
-/**
+/** BITWISE OR OF TWO BINARY NUMBERS
+ *
  * performs the bitwise OR of two
  * binary numbers represented as char
- * arrays of 1's and 0's. The result
- * is returned.
+ * arrays of 1's and 0's.
  */
 
-char *BitwiseOR(char *a, char *b, char *result)
+void BitwiseOR(char *a, char *b, char *result)
 {
     properInput(a);properInput(b);
 
@@ -44,48 +43,43 @@ char *BitwiseOR(char *a, char *b, char *result)
             result[i] = '1';
         else result[i] = '0';
     }
-
-    return result;
 }
 
 
 
-/**
+/** BITWISE EXCLUSIVE OR (XOR) OF TWO BINARY NUMBERS
+ *
  * performs the bitwise XOR (exclusive OR)
  * of two binary numbers represented as
- * as char arrays of 1's and 0's. The
- *result is returned.
+ * as char arrays of 1's and 0's.
  */
 
-char *BitwiseXOR(char *a, char *b, char *result)
+void BitwiseXOR(char *a, char *b, char *result)
 {
     properInput(a);properInput(b);
 
     int i;
     for(i = 0; i < byteSize; i++)
         result[i] = (a[i] == b[i]) ? '0': '1';
-
-    return result;
 }
 
 
 
-/**
+/** ONES COMPLIMENT OF A BINARY NUMBER
+ *
  * performs the bitwise 1's compliment,
  * also know as the negate, of two binary
  * numbers represented as char arrays
- * of 1's and 0's. The result is returned.
+ * of 1's and 0's.
  */
 
-char *BitwiseONESCOMPLIMENT(char *a, char *result)
+void BitwiseONESCOMPLIMENT(char *a, char *result)
 {
     properInput(a);
 
     int i;
     for(i = 0; i < byteSize; i++)
         result[i] = (a[i] == '0') ? '1' : '0' ;
-
-    return result;
 }
 
 
