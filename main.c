@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "scanTest.h"
-#include "stack.h"
 #include "BitwiseOperations.h"
 #include "bitBasics.h"
 #include "bitShiftOperations.h"
+#include "arithmatic.h"
 
 void randomFill(char *cArray, int start, int end)
 {
@@ -35,20 +34,34 @@ void printArray(char *cArray)
     printf("\n");
 }
 
+
+void andTest(int x)
+{
+    //x >>= 1;
+    //x |= 5;
+
+    ///will set bit 4 to a 1 inside x
+    x |= 1 << 4;
+    printf("x is : %i", x);
+}
+///cArray[i] = (1 & (a >> i)) ? '1':'0' ;
+
 int main()
 {
     char a[byteSize], b[byteSize], result[byteSize];
 
-    decimalToBinary(a, 25);
-    printArray(a);
-    rotateR(a, 5);
+    decimalToBinary(a, 6);
     printArray(a);
 
+    decimalToBinary(b, 5);
+    printArray(b);
+
+    subtraction(a, b, result);
+    printArray(result);
 
 
-
-
-    //printArray(result);
+    //andTest(2);
 
     return 0;
 }
+

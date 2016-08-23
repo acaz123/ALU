@@ -73,13 +73,13 @@ void BitwiseXOR(char *a, char *b, char *result)
  * of 1's and 0's.
  */
 
-void BitwiseONESCOMPLIMENT(char *a, char *result)
+void BitwiseONESCOMPLIMENT(char *a)
 {
     properInput(a);
-
     int i;
+
     for(i = 0; i < byteSize; i++)
-        result[i] = (a[i] == '0') ? '1' : '0' ;
+        a[i] = (a[i] == '0') ? '1' : '0' ;
 }
 
 

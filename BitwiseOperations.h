@@ -78,6 +78,6 @@ void BitwiseXOR(char *a, char *b, char *result);
  *
  */
 
-void BitwiseONESCOMPLIMENT(char *a, char *result);
+void BitwiseONESCOMPLIMENT(char *a);
 
 #endif // BITWISEOPERATIONS_H_INCLUDED
