@@ -3,93 +3,103 @@
 
 /** ARITHMETIC LEFT SHIFT OF A BINARY NUMBER
  *
- * (char *a) - char array of '1' and/or '0' characters
- *  only to represent a binary number.
+ * "Binary_Array" - char array of '1's and/or '0's
+ *  representing a binary number.
  *
- * (int shifts) - number of times the array is to
+ * "shifts" - number of times the array is to
  *  be shifted.
  *
  */
 
-void arithmeticLS(char *a, int shifts);
+void Arithmetic_Left_Shift(char *Binary_Array, int shifts);
+
+
 
 
 /** ARITHMETIC RIGHT SHIFT OF A BINARY NUMBER
  *
- * (char *a) - char array of '1' and/or '0' characters
- *  only to represent a binary number.
+ * "Binary_Array - char array of '1's and/or '0's
+ *  representing a binary number.
  *
- * (int shifts) - number of times the array is to
+ * "shifts" - number of times the array is to
  *  be shifted.
  *
  */
 
-void arithmeticRS(char *a, int shifts);
+void Arithmetic_Right_Shift(char *Binary_Array, int shifts);
+
+
 
 
 /** LOGICAL LEFT SHIFT OF A BINARY NUMBER
  *
- * (char *a) - char array of '1' and/or '0' characters
- *  only to represent a binary number.
+ * "Binary_Array - char array of '1's and/or '0's
+ *  representing a binary number.
  *
- * (int shifts) - number of times the array is to
+ * "shift" - number of times the array is to
  *  be shifted.
  *
  */
 
-void logicLS(char *a, int shifts);
+void Logic_Left_Shift(char *Binary_Array, int shifts);
+
+
 
 
 /** LOGICAL RIGHT SHIFT OF A BINARY NUMBER
  *
- * (char *a) - char array of '1' and/or '0' characters
- *  only to represent a binary number.
+ * "Binary_Array" - char array of '1's and/or '0's
+ *  representing a binary number.
  *
- * (int shifts) - number of times the array is to
+ * "shifts" - number of times the array is to
  *  be shifted.
  *
  */
 
-void logicRS(char *a, int shifts);
+void Logic_Right_Shift(char *Binary_Array, int shifts);
+
+
 
 
 /** ROTATE LEFT WITH NO CARRY OF A BINARY NUMBER
  *
- * (char *a) - char array of '1' and/or '0' characters
- *  only to represent a binary number.
+ * "Binary _Array" - char array of '1's and/or '0's
+ *  representing a binary number.
  *
- * (int rotations) - number of times the array is to
+ * "rotations" - number of times the array is to
  *  be rotated.
  *
  */
 
-void rotateL(char * a, int rotations);
+void Rotate_Left(char * Binary_Array, int rotations);
+
+
 
 
 /** ROTATE RIGHT WITH NO CARRY OF A BINARY NUMBER
  *
- * (char *a) - char array of '1' and/or '0' characters
- *  only to represent a binary number.
+ * "Binary_Array" - char array of '1's and/or '0's
+ *  representing a binary number.
  *
- * (int rotations) - number of times the array is to
+ * "rotations" - number of times the array is to
  *  be rotated.
  *
  */
 
-void rotateR(char *a, int rotations);
+void Rotate_Right(char *Binary_Array, int rotations);
 
 
 /** UNIMPLEMENTED
  *
  */
 
-void rotateLcarry(char * a, int rotations);
+void Rotate_Left_Carry(char * Binary_Array, int rotations);
 
 
 /** UNIMPLEMENTED
  *
  */
 
-void rotateRcarry(char * a, int rotations);
+void Rotate_Right_Carry(char * Binary_Array, int rotations);
 
 #endif // BITSHIFTOPERATIONS_H_INCLUDED

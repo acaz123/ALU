@@ -5,35 +5,62 @@
 #include "bitShiftOperations.h"
 #include "arithmatic.h"
 
-void randomFill(char *cArray, int start, int end)
+/** RANDOMLY FILL PART OF "Binary_Array" WITH '1'
+ *
+ * Will randomly fill the char array "Binary_Array[]
+ * with '1' from "start" index up to "end" index.
+ * Used for testing.
+ *
+ */
+
+void Random_Fill(char *Binary_Array, int start, int end)
 {
     int i;
     for(i = start; i <= end; i++)
     {
-        cArray[i] = '1';
+        Binary_Array[i] = '1';
     }
 }
 
-void setArray(char *cArray)
+
+/** SET ALL ELEMENTS OF "Binary_Array" TO '0'
+ *
+ * Used for testing
+ *
+ */
+
+void Set_Array(char *Binary_Array)
 {
     int i;
     for(i = 0; i < byteSize; i++)
     {
-        cArray[i] = '0';
+        Binary_Array[i] = '0';
     }
 }
 
+/** PRINTS "Binary_Array"
+ *
+ * Used for testing
+ *
+ */
 
-void printArray(char *cArray)
+void Print_Array(char *Binary_Array)
 {
     int i;
     for(i = byteSize - 1; i >= 0; i--)
     {
-        printf("%c", cArray[i]);
+        printf("%c", Binary_Array[i]);
     }
     printf("\n");
 }
 
+/** TO BE DELETED!!!!
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
 
 void andTest(int x)
 {
@@ -48,20 +75,28 @@ void andTest(int x)
 
 int main()
 {
-    char a[byteSize], b[byteSize], result[byteSize];
+    char *a = malloc(sizeof(char*) * byteSize);
+    char *b = malloc(sizeof(char*) * byteSize);
+    char *result = malloc(sizeof(char*) * byteSize);
 
-    decimalToBinary(a, 6);
-    printArray(a);
+    int A = -5;
+    Decimal_To_Binary(a, A);
+    Print_Array(a);
 
-    decimalToBinary(b, 5);
-    printArray(b);
+    int B = -10;
+    Decimal_To_Binary(b, B);
+    Print_Array(b);
 
-    subtraction(a, b, result);
-    printArray(result);
+    int R;
+    Multiplication(a, b, result);
+    printf("\n\n");
+    Print_Array(result);
+    R = Binary_To_Decimal(result);
+    printf("%d * %d = %d\n", A, B, R);
 
 
-    //andTest(2);
 
+    free(a);free(b);free(result);
     return 0;
 }
 

@@ -12,15 +12,14 @@
  * arrays of 1's and 0's.
  */
 
-void BitwiseAND(char *a, char *b, char *result)
+void Bitwise_AND(char *X_Binary, char *Y_Binary, char *Z_Binary)
 {
-    properInput(a);properInput(b);
+    Proper_Format(X_Binary);Proper_Format(Y_Binary);
 
     int i;
+
     for(i = 0; i < byteSize; i++)
-    {
-        result[i] = (a[i] == b[i]) ? a[i] : '0';
-    }
+        Z_Binary[i] = (X_Binary[i] == Y_Binary[i]) ? X_Binary[i] : '0';
 }
 
 
@@ -32,16 +31,16 @@ void BitwiseAND(char *a, char *b, char *result)
  * arrays of 1's and 0's.
  */
 
-void BitwiseOR(char *a, char *b, char *result)
+void Bitwise_OR(char *X_Binary, char *Y_Binary, char *Z_Binary)
 {
-    properInput(a);properInput(b);
+    Proper_Format(X_Binary);Proper_Format(Y_Binary);
 
     int i;
     for(i = 0; i < byteSize; i++)
     {
-        if(a[i] == '1' || b[i] == '1')
-            result[i] = '1';
-        else result[i] = '0';
+        if(X_Binary[i] == '1' || Y_Binary[i] == '1')
+            Z_Binary[i] = '1';
+        else Z_Binary[i] = '0';
     }
 }
 
@@ -54,13 +53,13 @@ void BitwiseOR(char *a, char *b, char *result)
  * as char arrays of 1's and 0's.
  */
 
-void BitwiseXOR(char *a, char *b, char *result)
+void Bitwise_XOR(char *X_Binary, char *Y_Binary, char *Z_Binary)
 {
-    properInput(a);properInput(b);
+    Proper_Format(X_Binary);Proper_Format(Y_Binary);
 
     int i;
     for(i = 0; i < byteSize; i++)
-        result[i] = (a[i] == b[i]) ? '0': '1';
+        Z_Binary[i] = (X_Binary[i] == Y_Binary[i]) ? '0': '1';
 }
 
 
@@ -73,13 +72,14 @@ void BitwiseXOR(char *a, char *b, char *result)
  * of 1's and 0's.
  */
 
-void BitwiseONESCOMPLIMENT(char *a)
+void Bitwise_Ones_Compliment(char *X_Binary)
 {
-    properInput(a);
+    Proper_Format(X_Binary);
+
     int i;
 
     for(i = 0; i < byteSize; i++)
-        a[i] = (a[i] == '0') ? '1' : '0' ;
+        X_Binary[i] = (X_Binary[i] == '0') ? '1' : '0' ;
 }
 
 

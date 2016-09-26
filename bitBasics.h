@@ -4,49 +4,51 @@
 #include <stdbool.h>
 
 
-//sizeof(int) * CHAR_BIT
 extern const int byteSize;
 
 
 /** CONVERTS DECIMAL TO BINARY
  *
- * (char *cArray) - Char array the size of an int.
- *  each char in the array will be a '1' or '0' to
- * represent the binary valuer of "a".
+ * "Binary_Array" - char array the size of an int.
+ * each char in the array will be a '1' or '0' to
+ * represent the binary valuer of the integer"a".
  *
- * (int a) - integer to be the value of the binary
- * represented number in "cArray".
+ * "a" - decimal value to be converted into binary
  *
  */
 
-void decimalToBinary(char * cArray, int a);
+void Decimal_To_Binary(char * Binary_Array, int a);
+
+
 
 
 /** CONVERTS BINARY TO DECIMAL
  *
- * (char *cArray) - char array of '1' and '0'
- *  only representing a binary value that will
- *  be converted to a decimal value.
+ * "Binary_Array" - char array of '1's and '0's
+ * representing a binary value that will be converted
+ * to a decimal value.
  *
- * return - the decimal value of cArray of type
- * int
+ * return - integer that is the the decimal value
+ * of "Binary_Array".
  */
 
-int binaryToDecimal(char *cArray);
+int Binary_To_Decimal(char *Binary_Array);
+
+
 
 
 /** CHECKS FOR PROPER BINARY FORMAT
  *
- * (char *digits) - char array to be tested
+ *  "Binary_Array" - char array to be tested
  *  for proper format. Format should consist
- *  purely of '1' and/or '0' combinations. If
+ *  purely of '1's and/or '0's. If
  *  the array is not of proper input an error
  *  message is printed to the "stderr". The
  *  program then exits with a status of -1.
  *
  */
 
-void properInput(char *digit);
+void Proper_Format(char *Binary_Array);
 
 
 #endif // BITBASICS_H_INCLUDED
