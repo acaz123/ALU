@@ -73,15 +73,12 @@ void Multiplication(char *a, char *b, char *result)
     Set_Matrix_Empty(Dadda_Matrix, byteSize, 2 * byteSize - 1);
     Binary_Long_Multiplication(a, b, Dadda_Matrix);
 
-    Print_Matrix(Dadda_Matrix);
     while(depth > 2)
     {
      depth = Reduce_Dadda_Matrix(Dadda_Matrix, depth);
-     Print_Matrix(Dadda_Matrix);
     }
 
     Reduce_Dadda_Matrix(Dadda_Matrix, 1);
-    Print_Matrix(Dadda_Matrix);
 
     Set_Result_From_Matrix(Dadda_Matrix, result);
     Free_Matrix(Dadda_Matrix, byteSize);

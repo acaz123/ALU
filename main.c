@@ -94,8 +94,6 @@ int main()
     R = Binary_To_Decimal(result);
     printf("%d * %d = %d\n", A, B, R);
 
-
-
     free(a);free(b);free(result);
     return 0;
 }
