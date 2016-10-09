@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "BitwiseOperations.h"
 #include "bitBasics.h"
 #include "bitShiftOperations.h"
 #include "arithmatic.h"
+
 
 /** RANDOMLY FILL PART OF "Binary_Array" WITH '1'
  *
@@ -13,7 +15,7 @@
  *
  */
 
-void Random_Fill(char *Binary_Array, int start, int end)
+void Partial_Fill(char *Binary_Array, int start, int end)
 {
     int i;
     for(i = start; i <= end; i++)
@@ -79,22 +81,45 @@ int main()
     char *b = malloc(sizeof(char*) * byteSize);
     char *result = malloc(sizeof(char*) * byteSize);
 
-    int A = -5;
+    int A, B, R;
+    printf("Enter a non decimal number\n");
+    scanf("%d", &A);
     Decimal_To_Binary(a, A);
+    printf("%d in binary is\n", A);
     Print_Array(a);
 
-    int B = -10;
+    printf("\nEnter another non decimal number\n");
+    scanf("%d", &B);
     Decimal_To_Binary(b, B);
+    printf("%d in binary is\n", B);
     Print_Array(b);
 
-    int R;
-    Multiplication(a, b, result);
-    printf("\n\n");
+    R = A + B;
+    printf("\n%d + %d = %d\n", A, B, R);
+
+    Addition(a, b, result);
+    printf(" ");
+    Print_Array(a);
+    printf("+");
+    Print_Array(b);
+    printf("---------------------------------\n ");
     Print_Array(result);
-    R = Binary_To_Decimal(result);
+
+    R = A * B;
     printf("%d * %d = %d\n", A, B, R);
 
+    printf("The following is a dadda multiplier performing long multiplication then reducing");
+    Multiplication(a, b, result);
+    printf("The resulting binary number is\n");
+    Print_Array(result);
+
+    printf("The binary array converted back to decimal is: %d\n", Binary_To_Decimal(result));
+    printf("Press ctrl + c to exit");
+
     free(a);free(b);free(result);
+
+    char *c;
+    scanf("%s", c);
     return 0;
 }
 
